@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  web:
+    image: auth
+    build: .
+    # command: sudo docker exec -it ea9c9f14e846 yarn typeorm migration:run -t 1618094741502-CreateTableUsers.ts
+    command: yarn dev
+    ports: 
+      - "3000:3000"
+    links:
+      - db
+    working_dir: /usr/web
+    environment:
+      SEQ_DB: postgres
+      SEQ_USER: postgres
+      SEQ_PW: "0000"
+      PORT: 3000
+      DATABASE_URL: postgres://postgres:0000@db:5432/postgres
+  
+  db:
+    image: postgres
+    ports:
+    - "5420:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "0000"
