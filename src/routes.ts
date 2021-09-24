@@ -8,9 +8,10 @@ import authMiddleware from './app/middlewares/authMiddleware';
 
 router
   .get('/allusers', UserController.showAllUsers)
-  .get('/users', authMiddleware, UserController.show)
+  .get('/users/', authMiddleware, UserController.show)
   .post('/login', Authenticator.loginAuthenticate)
   .post('/users', UserController.create)
   .delete('/users', UserController.delete)
+  .post('/teste', UserController.teste)
 
 export default router;

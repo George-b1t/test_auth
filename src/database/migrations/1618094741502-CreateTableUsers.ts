@@ -15,12 +15,20 @@ export class CreateTableUsers1618094741502 implements MigrationInterface {
 					default: 'uuid_generate_v4()'
 				},
 				{ 
-					name: 'username',
+					name: 'page_name',
 					type: 'varchar',
 					isUnique: true
 				},
 				{
-					name: 'password',
+					name: 'description',
+					type: 'varchar'
+				},
+				{
+					name: 'date',
+					type: 'varchar'
+				},
+				{
+					name: 'test_column',
 					type: 'varchar'
 				}
 			]

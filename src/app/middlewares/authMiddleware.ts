@@ -11,7 +11,7 @@ export default function authMiddleware(req: Request, res: Response, next: NextFu
   const { authorization } = req.headers;
 
   if (!authorization) {
-    return res.sendStatus(401);
+    return next();
   };
 
   const token = authorization.replace('Bearer', '').trim();
